@@ -1,4 +1,30 @@
 .ion-padding {
-  display: flex;
-  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+  background-color: #66b2ff
+ no-repeat center center;
+  background-size: cover;
+   
+   text-align: center;
+
+
+}
+
+.botoni{
+  color:white;}
+  
+.titulo{
+  color: #66b2ff;
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-align: center;
+
+  
+
+.ion-content {
+ background-color: #66b2ff;
+  background-size: cover;
+  height: 100%;
+}
+background-color: #66b2ff;
 }

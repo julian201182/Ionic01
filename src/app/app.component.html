@@ -1,3 +1,30 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-router-outlet>
+    
+  </ion-router-outlet>
+</ion-app>
+<ion-app>
+
+
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/inicio">Inicio</ion-item>
+        <ion-item routerLink="/login">Login</ion-item>
+        <ion-item routerLink="/registro">Registro</ion-item>
+        <ion-item routerLink="/perfil">Perfil</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  
+  <div class="ion-page" id="main-content">
+    <ion-router-outlet></ion-router-outlet>
+  </div>
+
 </ion-app>

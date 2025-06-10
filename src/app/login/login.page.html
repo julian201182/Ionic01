@@ -1,21 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>Inicio de Sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
 
-  <div class="login-container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Bienvenido</ion-card-title>
-      </ion-card-header>
 
-      <ion-card-content>
+
+      <ion-card-content class="ion-padding">
+        
+        
         <ion-item>
           <ion-label position="floating">Usuario</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="usuario"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -23,12 +23,39 @@
           <ion-input type="password"></ion-input>
         </ion-item>
 
+        <ion-button expand="full" fill="outline" color="dark" (click)="mostrarCampo()">
+          Crear Usuario
+        </ion-button>
+
         
-        <ion-button expand="full" fill="outline" color="dark">Crear Usuario</ion-button>
-        <ion-button expand="full" color="primary" (click)="goTohome()">Ir al Home</ion-button>
+        <div *ngIf="mostrarFormulario">
+          <ion-item>
+            <ion-label position="floating">Correo</ion-label>
+            <ion-input type="email" [(ngModel)]="correo"></ion-input>
+          </ion-item>
 
+          <ion-item>
+            <ion-label position="stacked">Cumpleaños</ion-label>
+            <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="cumpleanos"></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input type="text" [(ngModel)]="direccion"></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" color="success" (click)="guardarUsuario()">
+            Guardar Usuario
+          </ion-button>
+        </div>
+
+        
+        <ion-button class="botoni" color="primary" (click)="borrardatos()">
+          borrar datos
+        </ion-button>
+
+        <ion-button class="botoni" color="primary" (click)="goTohome()">
+          Ir al Home
+        </ion-button>
       </ion-card-content>
-    </ion-card>
-  </div>
 
-</ion-content>

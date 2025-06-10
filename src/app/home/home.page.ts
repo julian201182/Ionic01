@@ -3,19 +3,20 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  standalone: false,
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
+  standalone: false
 })
 export class HomePage {
 
-  constructor(private router: Router) {} 
+  constructor(private router: Router) {}
 
   goToPage() {
-    this.router.navigate(['/login']); 
+    this.router.navigate(['/login']);
   }
 
-
+  irAInicio() {
+    this.router.navigate(['/inicio']);  
+  }
 
 }
-

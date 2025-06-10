@@ -25,3 +25,30 @@
 #container a {
   text-decoration: none;
 }
+#container a ion-text-center {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#login  {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; 
+}
+
+.custom-button {
+  font-size: 1.1rem;
+  --border-radius: 12px;
+  --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+      
+ion-content {
+  --background: none; 
+  background: url('/assets/fondo2.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100%;
+}
+
+.cancun{
+  border-color: aqua;
+}

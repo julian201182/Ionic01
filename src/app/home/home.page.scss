@@ -7,6 +7,12 @@
   top: 50%;
   transform: translateY(-50%);
 }
+.ion-header{
+
+  --background: black;
+  --border-color: white;
+  color: white;
+}
 
 #container strong {
   font-size: 20px;
@@ -29,6 +35,10 @@
   margin-top: 20px;
   width: 100%;
 }
+.ion-no-border {
+  background-color: purple;
+}
+
 
 #login  {
   display: flex;
@@ -36,14 +46,18 @@
   margin-top: 20px; 
 }
 
-.custom-button {
-  font-size: 1.1rem;
-  --border-radius: 12px;
-  --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+.custom-button1 {
+   --background: #000;                    
+  border: 2px solid var(--border-color);
+  font-weight: bold;
+  border-radius: 12px;            
+  transition: transform 0.2s ease;
+  
 }
+
       
 ion-content {
-  --background: none; 
+  --background: transparent; 
   background: url('/assets/fondo2.jpg') no-repeat center center;
   background-size: cover;
   height: 100%;
@@ -52,3 +66,14 @@ ion-content {
 .cancun{
   border-color: aqua;
 }
+.ion-padding {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(blue), to(black));
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+
+

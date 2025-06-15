@@ -74,3 +74,11 @@
 .imagenes img:hover {
   transform: scale(1.05);
 }
+
+.ion-padding {
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}

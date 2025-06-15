@@ -1,0 +1,39 @@
+.fondo-suave {
+  background: linear-gradient(to bottom, #66b2ff, #66b2ff); 
+}
+
+.contenedor-imagen {
+  margin: 20px auto;
+  max-width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  border: 2px solid black; 
+}
+
+.imagen-principal {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.mensaje-principal {
+  background-color: #66b2ff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  max-width: 380px;
+  margin: 20px auto;
+  border: 2px solid black;
+}
+
+.mensaje-principal ion-card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: black; 
+}
+
+.fondo-suave ion-padding{
+    background: linear-gradient(to bottom, #66b2ff, black); 
+}

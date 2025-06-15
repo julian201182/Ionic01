@@ -1,19 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+<ion-header  class="ion-header"> 
   <ion-toolbar color="primary">
-    <ion-title>Bienvenido a BuscaRest
+    <ion-title>Bienvenido a BuscaRest 
+      <style>
+        ion-icon {
+          color: white;
+        }
+       
+      </style>
       <ion-icon name="airplane-outline"></ion-icon>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-
-
-
-
 
   <ion-card>  
     <ion-card-header>
@@ -24,8 +23,16 @@
       <p>¡Bienvenido a BuscaRest.cl! Tu plataforma para encontrar los mejores destinos turísticos.</p>
       <p>Explora, reserva y disfruta de experiencias inolvidables.</p>
     </ion-card-content>
-
   </ion-card>
+
+<ion-card class="ion-text-center">
+  <ion-card-header>
+    <ion-card-title class="ion-text-center"><img src="assets\img\logo.jpg" alt=""></ion-card-title>
+  </ion-card-header>
+</ion-card>
+
+
+
   <ion-card>
     <ion-card-header>
       <ion-card-title class="ion-text-center">Busca tu Proximo Destino!</ion-card-title>
@@ -41,6 +48,9 @@
 
       <ion-button class="custom-button2" expand="block" color="medium" (click)="irAInicio()" class="ion-margin-top">
        Inicio
+      </ion-button>
+      <ion-button class="custom-button2" expand="block" color="medium" (click)="irAPortada()" class="ion-margin-top">
+       Portada
       </ion-button>
 
       <ion-card>

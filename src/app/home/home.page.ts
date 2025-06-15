@@ -18,5 +18,8 @@ export class HomePage {
   irAInicio() {
     this.router.navigate(['/inicio']);  
   }
+  irAPortada() {
+    this.router.navigate(['/portada7']);
+  }
 
 }

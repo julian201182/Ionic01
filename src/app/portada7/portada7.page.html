@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light">
+    <ion-title>BuscaRest.cl   app</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo-suave ion-padding">
+
+ 
+  <ion-card class="contenedor-imagen ion-text-center">
+    <img src="assets/img/fered.webp" alt="Imagen de hotel" class="imagen-principal" />
+  </ion-card>
+
+  
+  <ion-card class="mensaje-principal ion-text-center">
+    <ion-card-header>
+      <ion-card-title>
+        ¡Comienza el viaje de tus sueños!
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button class="boton-inicio" expand="block" color="primary" (click)="goTohome()">
+        Comenzar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  
+  <ion-card class="tarjeta-simple">
+    <ion-card-header>
+      <ion-card-title>Ofertas desde $529.000</ion-card-title>
+    </ion-card-header>
+  </ion-card>  
+
+  <ion-card class="tarjeta-simple">
+    <ion-card-header>
+      <ion-card-title>Con todo medio de pago</ion-card-title>
+    </ion-card-header>
+  </ion-card> 
+
+</ion-content>

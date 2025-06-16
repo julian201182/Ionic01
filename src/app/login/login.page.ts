@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service'; 
-
-
-
 import { IonHeader, IonToolbar, IonContent, IonTitle, IonCard, IonCardHeader, IonLabel, IonInput, IonCardTitle, IonCardContent, IonItem, IonButton, IonDatetime } from "@ionic/angular/standalone";
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -20,9 +18,25 @@ export class LoginPage implements OnInit {
   direccion: string = '';
   mostrarFormulario: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private alertController: AlertController,private AuthService: AuthService) { }
 
   ngOnInit() {}
+
+  async mostrarAlerta(mensaje:string) {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: mensaje,
+      buttons: ['OK']
+    });
+    await alert.present();
+  }
+
+  async login() {
+    if (this.usuario === '' || this.correo === '' || this.cumpleanos === '' || this.direccion === '') {
+      await this.mostrarAlerta('Por favor, completa todos los campos.');
+      return;
+    }}
+
 
   mostrarCampo() {
     this.mostrarFormulario = true;
@@ -50,16 +64,7 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  login() {
-  const usuarioGuardado = localStorage.getItem('usuario');
-
-  if (usuarioGuardado) {
-    this.goTohome(); 
-  } else {
-    alert('Debes registrarte antes de iniciar sesión.');
-    this.mostrarFormulario = true; 
-  }
-}
+ 
 
   
 }

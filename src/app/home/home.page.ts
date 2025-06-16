@@ -9,15 +9,26 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.verificarAcceso();
+  }
+
+  verificarAcceso() {
+    const usuario = localStorage.getItem('usuario');
+    if (!usuario) {
+      
+      this.router.navigate(['/login']);
+    }
+  }
 
   goToPage() {
     this.router.navigate(['/login']);
   }
 
   irAInicio() {
-    this.router.navigate(['/inicio']);  
+    this.router.navigate(['/inicio']);
   }
+
   irAPortada() {
     this.router.navigate(['/portada7']);
   }

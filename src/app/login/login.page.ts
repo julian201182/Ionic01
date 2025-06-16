@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service'; 
-import { IonHeader, IonToolbar, IonContent, IonTitle, IonCard, IonCardHeader, IonLabel, IonInput, IonCardTitle, IonCardContent, IonItem, IonButton, IonDatetime } from "@ionic/angular/standalone";
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -18,37 +16,44 @@ export class LoginPage implements OnInit {
   direccion: string = '';
   mostrarFormulario: boolean = false;
 
-  constructor(private router: Router,private alertController: AlertController,private AuthService: AuthService) { }
+  constructor(private router: Router, private alertController: AlertController) {}
 
   ngOnInit() {}
 
-  async mostrarAlerta(mensaje:string) {
+  mostrarCampo() {
+    this.mostrarFormulario = true;
+  }
+
+  async mostrarAlerta(mensaje: string) {
     const alert = await this.alertController.create({
-      header: 'Error',
+      header: 'Atención',
       message: mensaje,
       buttons: ['OK']
     });
     await alert.present();
   }
 
-  async login() {
-    if (this.usuario === '' || this.correo === '' || this.cumpleanos === '' || this.direccion === '') {
-      await this.mostrarAlerta('Por favor, completa todos los campos.');
-      return;
-    }}
-
-
-  mostrarCampo() {
-    this.mostrarFormulario = true;
-  }
-
   guardarUsuario() {
-    console.log('Datos del nuevo usuario:');
-    console.log('Nombre:', this.usuario);
-    console.log('Correo:', this.correo);
-    console.log('Cumpleaños:', this.cumpleanos);
-    console.log('Dirección:', this.direccion);
-    alert('Usuario creado correctamente.');
+    if (!this.usuario || !this.correo || !this.cumpleanos || !this.direccion) {
+      this.mostrarAlerta('Por favor, completa todos los campos');
+      return;
+    }
+
+    // Guardamos el usuario
+    localStorage.setItem('usuario', JSON.stringify({
+      usuario: this.usuario,
+      correo: this.correo,
+      cumpleanos: this.cumpleanos,
+      direccion: this.direccion
+    }));
+
+    // Mostramos mensaje
+    this.mostrarAlerta('Usuario creado correctamente. Redirigiendo al Home...');
+
+    // Navegamos al Home
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 1000);
   }
 
   borrardatos() {
@@ -57,14 +62,9 @@ export class LoginPage implements OnInit {
     this.cumpleanos = '';
     this.direccion = '';
     this.mostrarFormulario = false;
-    alert('Datos borrados');
   }
 
   goTohome() {
     this.router.navigate(['/home']);
   }
-
- 
-
-  
 }

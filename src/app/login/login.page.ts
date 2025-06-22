@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
       return;
     }
 
-    // Guardamos el usuario
+    
     localStorage.setItem('usuario', JSON.stringify({
       usuario: this.usuario,
       correo: this.correo,
@@ -47,10 +47,10 @@ export class LoginPage implements OnInit {
       direccion: this.direccion
     }));
 
-    // Mostramos mensaje
+    
     this.mostrarAlerta('Usuario creado correctamente. Redirigiendo al Home...');
 
-    // Navegamos al Home
+    
     setTimeout(() => {
       this.router.navigate(['/home']);
     }, 1000);

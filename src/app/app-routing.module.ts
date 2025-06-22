@@ -31,6 +31,11 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'error404',
     pathMatch: 'full'
+  },
+
+  {
+    path: 'mapas',
+    loadChildren: () => import('./mapas/mapas.module').then( m => m.MapasPageModule)
   }
 ];
 

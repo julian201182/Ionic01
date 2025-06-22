@@ -14,6 +14,9 @@ export class InicioPage {
   volverAlHome() {
     this.router.navigate(['/home']);
   }
+  Mapas() {
+    this.router.navigate(['/mapas']);
+  }
   
   descripcionActiva: number | null = null;
 

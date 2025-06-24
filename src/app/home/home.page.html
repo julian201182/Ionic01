@@ -52,6 +52,15 @@
       <ion-button class="custom-button2" expand="block" color="medium" (click)="irAPortada()" class="ion-margin-top">
        Portada
       </ion-button>
+      <ion-button expand="block" (click)="tomarFoto()">📸 Tomar Foto</ion-button>
+
+<div *ngIf="imagen" class="ion-margin-top">
+  <ion-card>
+    <img [src]="imagen" />
+    <ion-card-content>Foto tomada desde la cámara</ion-card-content>
+  </ion-card>
+</div>
+
 
       <ion-card>
 
@@ -62,7 +71,7 @@
     
   </ion-card-content>
 </ion-card>
-
+  
 
     </ion-card-content>
   </ion-card>

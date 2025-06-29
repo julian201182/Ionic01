@@ -10,7 +10,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 })
 export class HomePage implements OnInit {
 
-  usuario: any = null; 
+  usuario: any = null;
   imagen: string | null = null;
 
   constructor(private router: Router) {
@@ -24,9 +24,16 @@ export class HomePage implements OnInit {
     }
   }
 
+  ionViewWillEnter() {
+    const datosGuardados = localStorage.getItem('usuarioGuardado');
+    if (datosGuardados) {
+      this.usuario = JSON.parse(datosGuardados);
+    }
+  }
+
   verificarAcceso() {
-    const usuario = localStorage.getItem('usuario');
-    if (!usuario) {
+    const usuarioGuardado = localStorage.getItem('usuarioGuardado');
+    if (!usuarioGuardado) {
       this.router.navigate(['/login']);
     }
   }

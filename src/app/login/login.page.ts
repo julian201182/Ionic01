@@ -43,12 +43,14 @@ export class LoginPage implements OnInit {
       cumpleanos: this.cumpleanos,
       direccion: this.direccion
     };
+    
 
     localStorage.setItem('usuarioGuardado', JSON.stringify(nuevoUsuario));
 
     alert('✅ Usuario guardado correctamente');
     this.mostrarFormulario = false;
-    this.limpiarCampos();
+    this.router.navigate(['/home']);
+    //this.limpiarCampos();
   }
 
   borrardatos() {

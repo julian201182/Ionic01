@@ -1,18 +1,20 @@
 <ion-header  class="ion-header"> 
   <ion-toolbar color="primary">
-    <ion-title>
-      Bienvenido a BuscaRest 
+    <ion-title>Bienvenido a BuscaRest 
       <style>
         ion-icon {
           color: white;
         }
+       
       </style>
       <ion-icon name="airplane-outline"></ion-icon>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true" class="ion-padding">
+  
 
   <ion-card>  
     <ion-card-header>
@@ -25,25 +27,56 @@
     </ion-card-content>
   </ion-card>
 
- 
-  <ion-card *ngIf="usuario">
+<ion-card class="ion-text-center">
+  <ion-card-header>
+    <ion-card-title class="ion-text-center"><img src="assets\img\logo.jpg" alt=""></ion-card-title>
+  </ion-card-header>
+</ion-card>
+
+
+
+  <ion-card>
     <ion-card-header>
-      <ion-card-title class="ion-text-center">👤 Información del Usuario</ion-card-title>
+      <ion-card-title class="ion-text-center">Busca tu Proximo Destino!</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <p><strong>Usuario:</strong> {{ usuario.usuario }}</p>
-      <p><strong>Correo:</strong> {{ usuario.correo }}</p>
-      <p><strong>Cumpleaños:</strong> {{ usuario.cumpleanos }}</p>
-      <p><strong>Dirección:</strong> {{ usuario.direccion }}</p>
+
+    <ion-card-content class="ion-text-center">
+      
+      
+      
+
+      <ion-button class="custom-button1" expand="block" color="success" (click)="goToPage()">
+        REGISTRARSE
+      </ion-button>
+
+      <ion-button class="custom-button2" expand="block" color="medium" (click)="irAInicio()" class="ion-margin-top">
+       Inicio
+      </ion-button>
+      <ion-button class="custom-button2" expand="block" color="medium" (click)="irAPortada()" class="ion-margin-top">
+       Portada
+      </ion-button>
+      <ion-button expand="block" (click)="tomarFoto()">📸 Tomar Foto</ion-button>
+
+<div *ngIf="imagen" class="ion-margin-top">
+  <ion-card>
+    <img [src]="imagen" />
+    <ion-card-content>Foto tomada desde la cámara</ion-card-content>
+  </ion-card>
+</div>
+
+
+      <ion-card>
+
+  
+    
+  
+  <ion-card-content>
+    
+  </ion-card-content>
+</ion-card>
+  
+
     </ion-card-content>
   </ion-card>
 
-
-  <div *ngIf="imagen" class="ion-margin-top">
-    <ion-card>
-      <img [src]="imagen" />
-      <ion-card-content>Foto tomada desde la cámara</ion-card-content>
-    </ion-card>
-  </div>
-
-  
+</ion-content>

@@ -2,30 +2,37 @@
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-       <ion-button (click)="Mapas()">
-          Mapa
-        </ion-button>
+      <ion-button (click)="Mapas()">
+        Mapa
+      </ion-button>
     </ion-buttons>
     <ion-title>Inicio</ion-title>
-     
   </ion-toolbar>
 </ion-header>
 
-
-
 <ion-content [fullscreen]="true" class="pagina-inicio">
-<ion-button class="botoni" fill="clear" color="primary" (click)="volverAlHome()">
-          Ir al Home
-        </ion-button>
-       
-        
 
-        
+  <ion-button class="botoni" fill="clear" color="primary" (click)="volverAlHome()">
+    Ir al Home
+  </ion-button>
+
+  <!-- Mostrar datos del usuario -->
+  <ion-card *ngIf="usuario">
+    <ion-card-header>
+      <ion-card-title>👤 Información del Usuario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Usuario:</strong> {{ usuario.usuario }}</p>
+      <p><strong>Correo:</strong> {{ usuario.correo }}</p>
+      <p><strong>Cumpleaños:</strong> {{ usuario.cumpleanos }}</p>
+      <p><strong>Dirección:</strong> {{ usuario.direccion }}</p>
+    </ion-card-content>
+  </ion-card>
+
   <section class="seccion">
     <h2 class="titulo-seccion">Hoteles
       <ion-icon name="business-sharp"></ion-icon>
     </h2>
-    
     <h3>Desde 259.990$</h3>
     <div class="imagenes">
       <img src="assets/img/imagendes.webp" alt="Imagendehotel" />
@@ -35,7 +42,6 @@
     </div>
   </section>
 
- 
   <section class="seccion">
     <h2 class="titulo-seccion">Cabañas</h2>
     <div class="imagenes">
@@ -46,7 +52,6 @@
     </div>
   </section>
 
-  
   <section class="seccion">
     <h2 class="titulo-seccion">Resorts</h2>
     <div class="imagenes">

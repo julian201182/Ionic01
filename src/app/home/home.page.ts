@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
@@ -6,12 +6,22 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
+  standalone: false,
 })
-export class HomePage {
+export class HomePage implements OnInit {
+
+  usuario: any = null; 
   imagen: string | null = null;
 
   constructor(private router: Router) {
     this.verificarAcceso();
+  }
+
+  ngOnInit() {
+    const datosGuardados = localStorage.getItem('usuarioGuardado');
+    if (datosGuardados) {
+      this.usuario = JSON.parse(datosGuardados);
+    }
   }
 
   verificarAcceso() {

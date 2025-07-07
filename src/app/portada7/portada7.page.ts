@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-portada7',
   templateUrl: './portada7.page.html',
@@ -8,6 +9,19 @@ import { Router } from '@angular/router';
   standalone: false
 })
 export class Portada7Page implements OnInit {
+  imagenes = [
+    "assets/img/fered.webp",
+    
+  ];
+
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+    autoplay: {
+      delay: 3000,
+    },
+    loop: true
+  };
 
   constructor(private router: Router) { }
 

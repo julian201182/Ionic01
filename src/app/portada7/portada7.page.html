@@ -8,7 +8,10 @@
 
  
   <ion-card class="contenedor-imagen ion-text-center">
-    <img src="assets/img/fered.webp" alt="Imagen de hotel" class="imagen-principal" />
+    <img src="assets/img/fered.webp" alt="Imagen de portada" class="imagen-portada">
+    <ion-card-header>
+      <ion-card-title class="titulo-portada">BuscaRest.cl</ion-card-title>
+    </ion-card-header>
   </ion-card>
 
   
@@ -20,7 +23,7 @@
     </ion-card-header>
 
     <ion-card-content>
-      <ion-button class="boton-inicio" expand="block" color="primary" (click)="goTohome()">
+      <ion-button class="boton-inicio" expand="block"  (click)="goTohome()">
         Comenzar
       </ion-button>
     </ion-card-content>
@@ -33,7 +36,7 @@
     </ion-card-header>
   </ion-card>  
 
-  <ion-card class="tarjeta-simple">
+  <ion-card class="tarjeta">
     <ion-card-header>
       <ion-card-title>Con todo medio de pago</ion-card-title>
     </ion-card-header>

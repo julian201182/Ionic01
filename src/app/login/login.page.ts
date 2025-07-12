@@ -18,6 +18,7 @@ export class LoginPage implements OnInit {
   mostrarFormulario: boolean = false;
 
   constructor(private router: Router) {}
+  
 
   ngOnInit() {
     const usuarioGuardado = localStorage.getItem('usuarioGuardado');
@@ -30,6 +31,23 @@ export class LoginPage implements OnInit {
       this.direccion = datos.direccion;
     }
   }
+
+  errorMessage: string = '';
+
+login() {
+  if (!this.usuario) {
+    this.errorMessage = 'El nombre de usuario no puede estar vacío';
+    return;
+  }
+  if (!this.contrasena) {
+    this.errorMessage = 'La contraseña no puede estar vacía';
+    return;
+  }
+
+  this.errorMessage = ''; // Sin errores
+  this.router.navigate(['/home']);
+}
+
 
   mostrarCampo() {
     this.mostrarFormulario = true;

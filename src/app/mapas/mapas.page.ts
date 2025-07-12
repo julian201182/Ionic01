@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@capacitor/geolocation';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
+
 @Component({
   selector: 'app-mapas',
   templateUrl: './mapas.page.html',

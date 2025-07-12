@@ -30,6 +30,7 @@
     "@capacitor/haptics": "7.0.1",
     "@capacitor/keyboard": "7.0.1",
     "@capacitor/status-bar": "7.0.1",
+    "@ionic-native/sqlite": "^5.36.0",
     "@ionic/angular": "^8.0.0",
     "cordova-plugin-geolocation": "^5.0.0",
     "ionicons": "^7.0.0",

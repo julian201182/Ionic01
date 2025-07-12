@@ -5,7 +5,11 @@ describe('LoginPage', () => {
   let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
 
-  beforeEach(() => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [LoginPage]
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LoginPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -14,11 +18,11 @@ describe('LoginPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('debería mostrar error si username está vacío', () => {
-  component.usuario = '';
-  component.contrasena = '1234';
-  component.login();
-  expect(component.errorMessage).toBe('El nombre de usuario no puede estar vacío');
-});
 
+  it('debería mostrar error si username está vacío', () => {
+    component.usuario = '';
+    component.contrasena = '1234';
+    component.login();
+    expect(component.errorMessage).toBe('El nombre de usuario no puede estar vacío');
+  });
 });

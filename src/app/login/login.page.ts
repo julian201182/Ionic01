@@ -44,7 +44,7 @@ login() {
     return;
   }
 
-  this.errorMessage = ''; // Sin errores
+  this.errorMessage = ''; 
   this.router.navigate(['/home']);
 }
 

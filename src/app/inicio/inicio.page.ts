@@ -33,7 +33,7 @@ export class InicioPage {
   mostrarDescripcion(index: number) {
     this.descripcionActiva = this.descripcionActiva === index ? null : index;
   }
-  verHotel1() {
-    this.router.navigate(['/hotel1']);
+  verHotel() {
+    this.router.navigate(['/hotel']);
   }
 }

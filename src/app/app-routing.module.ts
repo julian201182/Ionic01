@@ -27,21 +27,22 @@ const routes: Routes = [
     loadChildren: () =>
       import('./error404/error404.module').then(m => m.Error404PageModule)
   },
-  {
-    path: 'mapas',
-    loadChildren: () =>
-      import('./mapas/mapas.module').then(m => m.MapasPageModule)
-  },
+ 
   {
     path: '',
     redirectTo: 'portada7',
     pathMatch: 'full',
   },
   {
+    path: 'hotel',
+    loadChildren: () => import('./hotel/hotel.module').then( m => m.HotelPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'error404',
     pathMatch: 'full',
-  }
+  },
+  
 ];
 
 @NgModule({
